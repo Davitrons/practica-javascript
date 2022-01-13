@@ -10,15 +10,25 @@ window.addEventListener("DOMContentLoaded", () => {
     var nodoPrueba = document.getElementById("prueba");
 
     var fechaPrueba;
+    var fechaCookie;
     var premio = [];
     var misNumeros = [];
 
     /************* REALIZAR SORTEO  ****************************/ // FALTA VALIDAR FECHA ANTES SISTEMA
     var botonValidarFecha = document.getElementById("botonValidarFecha"); // antesSistema -> true botones aleatorios/grabar enabled
+
+    botonValidarFecha.addEventListener('click', function(){
+        if(validarFecha(fechaPrueba)<0){
+            fechaCookie = fechaPrueba.toLocaleDateString();
+        }else{
+            alert("No es correcto");
+        }
+    });
+
     var fecha1 = document.getElementById("fecha1");
 
     fecha1.addEventListener('change', function () {
-        fechaPrueba = new Date(fecha1.value).toLocaleDateString();
+        fechaPrueba = new Date(fecha1.value);
         console.log("fechaPrueba = fecha 1: " + fechaPrueba);
 
     });
@@ -33,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
     var botonGrabar = document.getElementById("botonGrabar"); // crearCookie(clave,valor)
 
     botonGrabar.addEventListener('click', function () {
-        crearCookie(fechaPrueba,premio,30)
+        crearCookie(fechaCookie,premio,30)
     });
 
 
@@ -215,7 +225,28 @@ window.addEventListener("DOMContentLoaded", () => {
         }
 
         return fecha.toLocaleDateString();
-    } // bien
+    } 
+
+    function validarFecha(date){
+        var fechActual=new Date(Date.now());
+        var fechComp=new Date(date);
+        console.log(fechActual);
+        console.log(fechComp);
+    
+        console.log(fechActual<fechComp);
+    
+        if(fechActual<fechComp){
+            console.log(1);
+            return 1;
+        }
+        if(fechActual>fechComp){
+            console.log(-1);
+            return -1;
+        }else{
+            console.log(0);
+            return 0;
+        }
+    }// bien
 
     function ComprobarPremio(aleatorio, ganador) {
         let celdas = document.querySelectorAll("td");
