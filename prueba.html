@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Primitiva</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/prueba.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <h1>Primitiva</h1>
+  </header>
+  <main>
+    <section>
+      <article class="sortear">
+        <form action="" method="get">
+          <fieldset>
+            <legend>Realizar Sorteo</legend>
+            <fieldset>
+              <legend>Introduzca la fecha del sorteo</legend>
+              <input type="date" id="fecha1" required>
+
+              <!--
+              <input type="number" id="anio" min="1970" max="2022" pattern="[0-9]{2}" placeholder="año" required>
+              <input type="number" id="mes" min="1" max="12" pattern="[0-9]{2}" placeholder="mes" required>
+              <input type="number" id="dia" min="1" max="31" pattern="[0-9]{2}" placeholder="día" required>
+            -->
+            </fieldset>
+            <fieldset>
+              <legend>Opciones</legend>
+              <input type="button" id="botonValidarFecha" value="Validar fecha">
+              <input type="button" id="botonGenerarAleatorios" value="Generar aleatorios">
+              <input type="button" id="botonGrabar" value="Grabar">
+            </fieldset>
+          </fieldset>
+        </form>
+      </article>
+    </section>
+
+    <section>
+      <article class="comprobar">
+        <form action="" method="get">
+          <fieldset>
+            <legend>Comprobar Combinación</legend>
+            <fieldset id="cajonSelectFechas">
+              <legend>Fecha Sorteo</legend>
+              <input type="date" id="fecha2" required>
+            </fieldset>
+            <fieldset id="misNumeros">
+
+
+              <legend>Introduzca su Combinación</legend>
+              <input type="button" id="botonComprobarPremio" value="Comprobar">
+
+              <!--
+              <input type="number" min="1" max="49" pattern="[0-9]{2}" required>
+              <input type="number" min="1" max="49" pattern="[0-9]{2}" required>
+              <input type="number" min="1" max="49" pattern="[0-9]{2}" required>
+              <input type="number" min="1" max="49" pattern="[0-9]{2}" required>
+              <input type="number" min="1" max="49" pattern="[0-9]{2}" required>
+              <input type="number" min="1" max="49" pattern="[0-9]{2}" required>
+              -->
+
+            </fieldset>
+
+          </fieldset>
+        </form>
+      </article>
+    </section>
+  </main>
+  <div id="prueba"></div>
+
+</body>
+
+</html>
