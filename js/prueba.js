@@ -33,8 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
     var botonGrabar = document.getElementById("botonGrabar"); // crearCookie(clave,valor)
 
     botonGrabar.addEventListener('click', function () {
-        document.cookie = `${fechaPrueba}=${premio}`
-        console.log(document.cookie)
+        crearCookie(fechaPrueba,premio,30)
     });
 
 
@@ -124,6 +123,13 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         }
         return numeros;
+    }
+    
+    function crearCookie(clave, valor, diasexpiracion) { 
+        var d = new Date(); 
+        d.setTime(d.getTime() + (diasexpiracion*24*60*60*1000)); 
+        var expires = "expires="+d.toUTCString(); 
+        document.cookie = clave + "=" + valor + "; " + expires; 
     }// bien
 
     // SANTI
